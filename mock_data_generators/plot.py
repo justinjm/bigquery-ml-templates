@@ -22,8 +22,8 @@ import pandas as pd
 import numpy as np
 from itertools import groupby
 
-data = pd.read_csv("crm_user.csv")
+data = pd.read_csv("dataset/crm_user.csv")
 lv = data["Age"].values
-count, bins, ignored = plt.hist(lv, 30, normed=True)
+count, bins, ignored = plt.hist(lv, 30, density=True)
 plt.plot(bins, 1/(245 * np.sqrt(2 * np.pi)) * np.exp( - (bins - 255)**2 / (2 * 245**2)), linewidth=2, color='r')
 plt.show()
